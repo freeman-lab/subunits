@@ -8,7 +8,7 @@ How to use
 
 First create a location and set appropriate paths in `data/loadData.m`
 
-Data sets must be mat files called `conepreprocess.mat` in the appropriate path, with a variable `datarun` containing the appropriate fields. Key fields are `spikeRate` (N x T matrix), `coneInputs` (T x C), and `locations` (C x 2), where N is the number of neurons, C is the number of cones, and T is the number of time points. 
+Data sets must be mat files called `conepreprocess.mat` in the appropriate path, with a variable `datarun` containing the appropriate fields. Key fields are `spikeRate` (N x T matrix), `coneInputs` (T x C), and `locations` (C x 2), where N is the number of neurons, C is the number of cones, and T is the number of time points. See `data/loadData.m` for details.
 
 Load a dataset
 

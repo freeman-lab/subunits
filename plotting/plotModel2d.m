@@ -240,16 +240,17 @@ set(t,'FontSize',14,'FontAngle','italic');
 
 
 %%
-h5 = axes('Position',[0.025 0.05 figWidth figHeight]);
-rect1 = rectangle('Position',[celldat.xRange(1) celldat.yRange(1)...
-  diff(celldat.xRange) diff(celldat.yRange)]);
-set(rect1,'FaceColor',[0.5 0.5 0.5]);
-set(rect1,'EdgeColor','none');
 v = loadVmat(celldat,dat);
-plotPairwiseLines(celldat,v,0,0);
-uistack(rect1,'bottom');
-title(sprintf('Max linearity = %.02g',max(v(:))));
-
+if ~isempty(v)
+    h5 = axes('Position',[0.025 0.05 figWidth figHeight]);
+    rect1 = rectangle('Position',[celldat.xRange(1) celldat.yRange(1)...
+      diff(celldat.xRange) diff(celldat.yRange)]);
+    set(rect1,'FaceColor',[0.5 0.5 0.5]);
+    set(rect1,'EdgeColor','none');
+    plotPairwiseLines(celldat,v,0,0);
+    uistack(rect1,'bottom');
+    title(sprintf('Max linearity = %.02g',max(v(:))));
+end
 
 %%
 plotTitles(celldat);
